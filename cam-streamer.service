@@ -1,0 +1,13 @@
+# Start raspi cam web streaming script
+# This goes in /lib/systemd/system
+
+[Unit]
+Description=Camera Web Streamer
+After=multi-user.target
+
+[Service]
+Type=idle
+ExecStart=/usr/bin/python3 /home/pi/stream_server.py
+
+[Install]
+WantedBy=multi-user.target
